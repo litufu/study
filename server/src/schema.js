@@ -8,14 +8,18 @@ const typeDefs = gql`
     channel(id:ID!):Channel
   }
 
-  input MessageInput{
-    channelId: ID!
-    text: String
-  }
-
   type Mutation{
     addChannel(name:String!):Channel
     addMessage(message:MessageInput!):Message
+  }
+
+  type Subscription{
+    messageAdded(channelId:ID!):Message
+  }
+
+  input MessageInput{
+    channelId: ID!
+    text: String
   }
 
   type Channel{

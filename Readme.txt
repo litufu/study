@@ -19,3 +19,9 @@ index.js
 第三次课
 在客户端添加route依赖，使用route来为channel建立详情页面。
 yarn add react-router react-router-dom
+使用withrouter来调用props.match；
+使用input type来输入多个变量。
+
+
+第四课：
+使用subscription来进行实时更新。

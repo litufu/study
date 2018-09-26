@@ -1,3 +1,6 @@
+const { PubSub,withFilter } = require('apollo-server');
+const pubsub = new PubSub();
+
 const channels = [
   {
     id: '1',
@@ -32,8 +35,18 @@ const resolvers = {
       if(!channel)
         throw new Error("Channel does not exist");
       channel.messages.push(newMessage)
+
+      pubsub.publish('messageAdded', { messageAdded: newMessage, channelId: args.message.channelId });
       return newMessage
     },
+  },
+  Subscription:{
+    messageAdded:{
+      subscribe:withFilter(
+        ()=>pubsub.asyncIterator('messageAdded'),
+        (payload,variables)=>payload.channelId===variables.channelId
+      )
+    }
   }
 };
 
