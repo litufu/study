@@ -28,22 +28,22 @@ class AddMessage extends React.Component{
     return(
       <Mutation
           mutation={ADD_Message}
-          update={(cache, { data:{addMessage} }) => {
-              const data = cache.readQuery({
-                query: CHANNEL_DETAIL_QUERY,
-                variables: {
-                  channelId: this.props.match.params.channelId,
-                },
-               });
-               data.channel.messages.push(addMessage)
-              cache.writeQuery({
-                query: CHANNEL_DETAIL_QUERY,
-                variables: {
-                  channelId: this.props.match.params.channelId,
-                },
-                data:data
-              });
-            }}
+          // update={(cache, { data:{addMessage} }) => {
+          //     const data = cache.readQuery({
+          //       query: CHANNEL_DETAIL_QUERY,
+          //       variables: {
+          //         channelId: this.props.match.params.channelId,
+          //       },
+          //      });
+          //      data.channel.messages.push(addMessage)
+          //     cache.writeQuery({
+          //       query: CHANNEL_DETAIL_QUERY,
+          //       variables: {
+          //         channelId: this.props.match.params.channelId,
+          //       },
+          //       data:data
+          //     });
+          //   }}
         >
           {
             (addMessage,{data})=>{

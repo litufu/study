@@ -25,3 +25,12 @@ yarn add react-router react-router-dom
 
 第四课：
 使用subscription来进行实时更新。
+服务端设置
+https://www.apollographql.com/docs/apollo-server/features/subscriptions.html
+客户端安装设置：
+npm install --save apollo-link-ws subscriptions-transport-ws
+https://www.apollographql.com/docs/react/advanced/subscriptions.html
+注意：
+（1）subscription中的subscribeToMore中的upQurey会和update同样更新cache，因此只能选择update或subscribeToMore两种中的一种，
+否则会出现冲突的情况。
+（2）updateQuery的更新缓存的时候，需要自己加上__typename，否则会报missing a field __typename的错误。

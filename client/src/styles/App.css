@@ -127,7 +127,7 @@ div.channelName {
 
 div.messagesList {
   padding: 0 30px;
-  position: fixed;
+  /* position: fixed; */
 }
 
 div.message {
