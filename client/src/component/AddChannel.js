@@ -41,7 +41,9 @@ class AddChannel extends React.Component{
                   onSubmit={
                     e=>{
                       e.preventDefault();
-                      addChannel({ variables: { name } })
+                      addChannel(
+                        { variables: { name },}
+                      )
                       this.setState({name:""})
                     }
                   }

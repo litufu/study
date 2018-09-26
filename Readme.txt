@@ -14,3 +14,8 @@ index.js
 
 第二次课：
 新增修改功能Mutation
+在完成mutation后通过update和乐观更新使页面及时更新。
+
+第三次课
+在客户端添加route依赖，使用route来为channel建立详情页面。
+yarn add react-router react-router-dom
