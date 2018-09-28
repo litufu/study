@@ -34,3 +34,7 @@ https://www.apollographql.com/docs/react/advanced/subscriptions.html
 （1）subscription中的subscribeToMore中的upQurey会和update同样更新cache，因此只能选择update或subscribeToMore两种中的一种，
 否则会出现冲突的情况。
 （2）updateQuery的更新缓存的时候，需要自己加上__typename，否则会报missing a field __typename的错误。
+
+第五课：分页
+使用fetchmore来获取分页，可以通过cursor的形式分页，也可以通过limit offset的形式分页。
+@connection配合fetchmore使用，使得fetchmore每次取得的结果在缓存中按照相同形式的key进行存储。
